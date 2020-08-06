@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<!--Tree View-->
+		<record id='class_tree' model='ir.ui.view'>
+			<field name="name">class.student.tree</field>
+			<field name="model">class.student</field>
+			<field name="arch" type="xml">
+				<tree string="Class">
+					<field name="name"/>
+					<field name="priority_one"/>
+					<field name="priority_two"/>
+
+				</tree>
+			</field>
+		</record>
+
+
+        <record id="class_menu_action" model="ir.actions.act_window">
+        	<field name="name">Class</field>
+        	<field name="res_model">class.student</field>
+        	<field name="view_type">form</field>
+        	<field name="view_mode">tree,form</field>
+        	<field name="domain">[]</field>
+        	<field name="help" type="html">
+            	<p class="o_view_nocontent_smiling_face">Start adding classes
+            	</p>
+        	</field>
+        </record>
+
+    	<menuitem id="class_menu"
+                  parent="school_menu"
+                  name="Class"
+                  action="class_menu_action"/>
+	</data>
+</odoo>

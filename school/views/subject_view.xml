@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<!--Tree View-->
+		<record id='subject_tree' model='ir.ui.view'>
+			<field name="name">subject.subject.tree</field>
+			<field name="model">subject.subject</field>
+			<field name="arch" type="xml">
+				<tree string="Subject">
+					<field name="sub_name"/>
+					<field name="code"/>
+					<field name="subject_list"/>
+				</tree>
+			</field>
+		</record>
+
+
+        <record id="subject_menu_action" model="ir.actions.act_window">
+        	<field name="name">Subject</field>
+        	<field name="res_model">subject.subject</field>
+        	<field name="view_type">form</field>
+        	<field name="view_mode">tree,form</field>
+        	<field name="domain">[]</field>
+        	<field name="help" type="html">
+            	<p class="o_view_nocontent_smiling_face">Create The First Subject
+            	</p>
+        	</field>
+        </record>
+
+    	<menuitem id="subject_menu"
+                  parent="school_menu"
+                  name="Subject"
+                  action="subject_menu_action"/>
+	</data>
+</odoo>
